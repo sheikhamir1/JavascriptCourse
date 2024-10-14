@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>javascript Dom</title>
+  </head>
+  <body>
+    <header>
+      <h1 id="firstH1">lets learn Javascript Dom</h1>
+    </header>
+    <section>
+      <header>
+        <h2 class="t1">what is javascript</h2>
+      </header>
+      <article>
+        <p>
+          JavaScript is a scripting or programming language that allows you to
+          implement complex features on web pages — every time a web page does
+          more than just sit there and display static information for you to
+          look at — displaying timely content updates, interactive maps,
+          animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet
+          that JavaScript is probably involved. It is the third layer of the
+          layer cake of standard web technologies, two of which (HTML and CSS)
+          we have covered in much more detail in other parts of the Learning
+          Area.
+        </p>
+      </article>
+    </section>
+    <a class="visit" href="https://www.google.com" target="_blank"
+      >visit google</a
+    >
+    <script>
+      "use strict";
+      const h1 = document.getElementById("firstH1");
+      h1.innerHTML = "welcome to class 12";
+      h1.style.backgroundColor = "blue";
+      //   console.log(h1);
+      //   console.log(style);
+      //   const t1 = document.getElementsByClassName("t1")[0];
+      //   t1.innerHTML = "welcome to class 12";
+      //   t1.style.backgroundColor = "blue";
+      //   console.log(t1);
+
+      const t1 = document.querySelector(".t1");
+      t1.style.backgroundColor = "crimson";
+      t1.style.color = "white";
+      t1.style.padding = "10px";
+      t1.style.textAlign = "center";
+      t1.innerHTML = " lets learn Javascript Dom";
+      //   t1.style.display = "none";
+      //   console.log(t1);
+
+      const visit = document.querySelector(".visit");
+      visit.attributes.href.value = "https://www.facebook.com";
+      console.log("visit", visit);
+      document.write("welcome to class 12");
+    </script>
+  </body>
+</html>
