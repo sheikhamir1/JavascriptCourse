@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class13</title>
+    <style>
+      h1 {
+        text-align: center;
+        background-color: crimson;
+        color: white;
+        padding: 10px;
+      }
+      button {
+        padding: 8px;
+        background-color: rgb(23, 187, 228);
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      button:hover {
+        background-color: rgb(163, 209, 37);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 onclick="this.innerHTML='welcome to class 13'">this is class 13</h1>
+
+    <p class="para">this is paragraph</p>
+    <button type="button" onclick="textChange()">change text</button>
+    <script>
+      "use strict";
+      const para = document.querySelector(".para");
+      console.log(para);
+      const btn = document.querySelector("button");
+
+      //   btn.addEventListener("click", () => {
+      //     para.innerHTML = "this is javascript Dom";
+      //     para.style.backgroundColor = "crimson";
+      //     para.style.color = "white";
+      //     para.style.textAlign = "center";
+      //     para.style.fontFamily = "cursive";
+      //     para.style.padding = "10px";
+      //   });
+
+      function textChange() {
+        para.innerHTML = "this is javascript Dom";
+        para.style.backgroundColor = "crimson";
+        para.style.color = "white";
+        para.style.textAlign = "center";
+        para.style.fontFamily = "cursive";
+        para.style.padding = "10px";
+      }
+    </script>
+  </body>
+</html>
