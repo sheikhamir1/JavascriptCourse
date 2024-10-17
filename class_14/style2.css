@@ -1,0 +1,21 @@
+* {
+  border: none !important;
+}
+
+body {
+  background-color: rgb(177, 139, 35) !important;
+  color: rgb(0, 0, 0) !important;
+}
+div,
+h1,
+p,
+button {
+  background-color: rgb(177, 139, 35) !important;
+  color: rgb(0, 0, 0) !important;
+  /* border: none !important; */
+}
+
+button {
+  background-color: rgb(238, 24, 24) !important;
+  color: rgb(255, 255, 255) !important;
+}
