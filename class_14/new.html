@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class14</title>
+    <link id="themecss" rel="stylesheet" />
+    <style>
+      .div1 {
+        border: 2px solid black;
+        margin: 10px;
+        padding: 10px;
+      }
+      button {
+        padding: 10px 15px 10px 15px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 14px;
+        /* border-color: rgb(160, 106, 26); */
+        cursor: pointer;
+        background-color: rgb(23, 228, 194);
+        color: white;
+        margin: 10px;
+      }
+      .btn:hover {
+        background-color: rgb(26, 85, 211);
+        border: none;
+      }
+      .div2 {
+        display: flex;
+        justify-content: center;
+      }
+      .btn2 {
+        background-color: rgb(231, 31, 188);
+        color: white;
+      }
+      .btn2:hover {
+        background-color: rgb(26, 85, 211);
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1">
+      <h1 class="t1">welcome to my theme changer</h1>
+      <p class="p1">change the theme by clickin the buttons</p>
+      <div class="div2">
+        <button class="btn" type="button" onclick="theme1()">theme 1</button>
+        <button class="btn" type="button" onclick="theme2()">theme 2</button>
+      </div>
+    </div>
+    <div class="div2">
+      <button class="btn2" type="button" onclick="theme('style1.css')">
+        styleSheet 1
+      </button>
+      <button class="btn2" type="button" onclick="theme('style2.css')">
+        styleSheet 2
+      </button>
+    </div>
+    <script>
+      const h1 = document.querySelector(".t1");
+      const div1 = document.querySelector(".div1");
+      const p1 = document.querySelector(".p1");
+      //   h1.innerHTML = "we are in class 14";
+      //   div1.style.backgroundColor = "crimson";
+      //   div1.style.padding = "10px";
+      //   p1.style.color = "white";
+      //   p1.style.textAlign = "center";
+      //   p1.style.fontFamily = "cursive";
+      //   p1.style.padding = "10px";
+      //   h1.style.textAlign = "center";
+      //   h1.style.color = "white";
+      //   div1.style.border = "none";
+
+      //   console.log(t1);
+
+      function theme1() {
+        div1.style.backgroundColor = "crimson";
+        p1.style.color = "white";
+        p1.style.textAlign = "center";
+        p1.style.fontFamily = "cursive";
+        p1.style.padding = "10px";
+        h1.style.textAlign = "center";
+        h1.style.color = "white";
+        div1.style.border = "none";
+      }
+
+      function theme2() {
+        div1.style.backgroundColor = "#7d2db8";
+        p1.style.color = "white";
+        p1.style.textAlign = "center";
+        p1.style.fontFamily = "cursive";
+        p1.style.padding = "10px";
+        h1.style.textAlign = "center";
+        h1.style.color = "white";
+        div1.style.border = "none";
+      }
+
+      const themecss = document.getElementById("themecss");
+      function theme(sheet) {
+        themecss.setAttribute("href", sheet);
+      }
+    </script>
+  </body>
+</html>
