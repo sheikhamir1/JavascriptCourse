@@ -1,0 +1,122 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start invisible */
+  }
+  to {
+    opacity: 1; /* End visible */
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.ul1 {
+  background-color: crimson;
+  color: white;
+  /* padding: 10px; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  list-style-type: none;
+}
+
+ul li {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 21px 10px;
+}
+ul li:hover {
+  background-color: #000000b0;
+  color: white;
+}
+
+h1.heading {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 45px;
+  padding: 15px 20px;
+}
+
+p.des {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+  /* padding: 10px; */
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.card {
+  /* border: 2px solid black; */
+  height: 300px;
+  width: 300px;
+  margin: 20px;
+}
+img {
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.toolpit {
+  height: 160px;
+  width: 220px;
+  border: 2px solid black;
+  position: relative;
+  bottom: 350px;
+  left: 180px;
+  /* position: absolute;
+  top: 190px;
+  left: 225px; */
+  background: #b1a9a9;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s linear 0.8s;
+}
+
+.card:hover .toolpit {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  animation: fadeIn 0.8s forwards;
+}
+
+.toolpit-1 {
+  padding: 43px 5px 30px 5px;
+  font-size: medium;
+}
+
+footer {
+  background-color: crimson;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  /* position: absolute;
+  bottom: 0px; */
+  width: -webkit-fill-available;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+div a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 30px;
+}
+div a:hover {
+  color: black;
+  font-weight: bold;
+}
