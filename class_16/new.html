@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class16</title>
+  </head>
+  <body>
+    <h1>JavaScript HTML Events</h1>
+    <h2>The oninput Attribute</h2>
+    <label for="fname">Enter you text</label> <br />
+    <input type="text" id="fname" oninput="upperCase()" />
+    <p>
+      When you write in the input field, a function is triggered to transform
+      the input to upper case.
+    </p>
+
+    <script>
+      function upperCase() {
+        const input = document.querySelector("#fname");
+        input.value = input.value.toUpperCase();
+
+        // const input = document.querySelector("#fname");
+        // console.log(input);
+      }
+
+      //   let a = "amir";
+      //   let b = a.toUpperCase();
+      //   console.log(b);
+    </script>
+  </body>
+</html>
