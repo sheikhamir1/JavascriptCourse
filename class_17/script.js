@@ -1,7 +1,9 @@
+// targets
 const btnEnable = document.getElementById("btn1");
 const btnEnable2 = document.getElementById("btn2");
 //   console.log(btnEnable);
 
+// function to create html h2 element
 function addH2() {
   const h2Element = document.createElement("h2");
   const h2Text = document.createTextNode(
@@ -22,13 +24,19 @@ function addH2() {
 
   // console.log("parent div", targetElement);
   console.log("added child h2 ", h2Element);
+
+  // enable and disable button
   btnEnable.disabled = false;
   btnEnable2.disabled = true;
 }
+
+// function to show my created h2 element
 function showH2() {
   const target = document.getElementsByTagName("h2")[0];
   target.style.display = "block";
   btnEnable.disabled = true;
+
+  //     disappare button after 3 seconds
   setTimeout(() => {
     btnEnable.style.display = "none";
     btnEnable2.style.display = "none";
