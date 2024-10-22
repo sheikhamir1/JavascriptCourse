@@ -1,0 +1,36 @@
+/* div {
+        border: 2px solid black;
+        margin: 10px;
+        padding: 10px;
+      } */
+.h1 {
+  text-align: center;
+  background-color: crimson;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 10px;
+}
+#btn1,
+#btn2 {
+  padding: 10px 15px 10px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  /* border-color: rgb(160, 106, 26); */
+  cursor: pointer;
+  background-color: rgb(209, 39, 48);
+  color: white;
+  margin: 10px;
+}
+
+#btn1:disabled,
+#btn2:disabled {
+  background-color: rgb(126, 111, 111);
+  cursor: not-allowed;
+}
+#btn1:enabled,
+#btn2:enabled {
+  background-color: rgb(209, 39, 48);
+  cursor: pointer;
+}
