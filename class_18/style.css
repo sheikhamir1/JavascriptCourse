@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+.user-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.user-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  transition: transform 0.2s;
+  margin: 10px;
+  height: 200px;
+}
+
+.user-card:hover {
+  transform: scale(1.05);
+}
+
+.user-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+}
+
+.user-card p {
+  margin: 5px 0;
+}
+
+.user-card a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.user-card a:hover {
+  text-decoration: underline;
+}
+.mystyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  /* border-color: rgb(160, 106, 26); */
+  cursor: pointer;
+  background-color: rgb(23, 228, 194);
+  color: white;
+  margin: 10px;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
