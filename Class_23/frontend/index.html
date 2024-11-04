@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <h1>CRUD Operations</h1>
+    <div style="border: 2px solid black" class="mt-10 pt-10">
+      <form id="itemForm">
+        <input type="text" id="name" placeholder="Name" required /><br />
+        <input
+          type="text"
+          id="description"
+          placeholder="Description"
+          required
+        />
+        <br />
+        <button onclick="addNewItem()" type="submit">Add Item</button>
+      </form>
+    </div>
+
+    <h2>Items</h2>
+    <ul id="itemList"></ul>
+
+    <script>
+      const apiUrl = "http://localhost:3000/items";
+
+      // Fetch and display items
+      async function fetchItems() {
+        console.log("Fetching items from the server...");
+        const response = await fetch(apiUrl);
+        const items = await response.json();
+        console.log("Items fetched:", items);
+
+        const itemList = document.getElementById("itemList");
+        itemList.innerHTML = "";
+        items.forEach((item) => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+                    <strong>${item.name}</strong>: ${item.description}
+                    <button onclick="deleteItem(${item.id})">Delete</button>
+                    <button onclick="editItem(${item.id}, '${item.name}', '${item.description}')">Edit</button>
+                `;
+          itemList.appendChild(li);
+        });
+      }
+
+      // Add a new item
+
+      async function addNewItem() {
+        const name = document.getElementById("name").value;
+        const description = document.getElementById("description").value;
+
+        console.log("Adding new item:", { name, description });
+
+        try {
+          const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            // authorization: `Bearer ${token}`,
+            body: JSON.stringify({ name, description }),
+          });
+
+          console.log("Post Response:", response);
+        } catch (error) {
+          console.log("handled error", error);
+        }
+        document.getElementById("itemForm").reset();
+        fetchItems();
+      }
+
+      // Delete an item
+      async function deleteItem(id) {
+        console.log(`Deleting item with id: ${id}`);
+        const response = await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
+
+        if (response.ok) {
+          console.log("Item deleted successfully");
+        } else {
+          console.error("Failed to delete item");
+        }
+
+        fetchItems();
+      }
+
+      // Edit an item
+      async function editItem(id, name, description) {
+        console.log(`Editing item with id: ${id}`);
+        document.getElementById("name").value = name;
+        document.getElementById("description").value = description;
+
+        const submitButton = document.querySelector("#itemForm button");
+        submitButton.textContent = "Update Item";
+
+        document.getElementById("itemForm").onsubmit = async (e) => {
+          e.preventDefault();
+          console.log(`Updating item with id: ${id}`);
+          const updatedName = document.getElementById("name").value;
+          const updatedDescription =
+            document.getElementById("description").value;
+
+          const response = await fetch(`${apiUrl}/${id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: updatedName,
+              description: updatedDescription,
+            }),
+          });
+
+          if (response.ok) {
+            console.log("Item updated successfully");
+          } else {
+            console.error("Failed to update item");
+          }
+
+          document.getElementById("itemForm").reset();
+          submitButton.textContent = "Add Item";
+          document.getElementById("itemForm").onsubmit = addNewItem;
+          fetchItems();
+        };
+      }
+
+      // Fetch items initially
+      fetchItems();
+    </script>
+  </body>
+</html>
